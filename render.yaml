@@ -8,18 +8,3 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.12.10
-      # Set these in the dashboard or replace values here if you commit secrets
-      - key: WATSONX_API_URL
-        sync: false
-      - key: WATSONX_API_KEY
-        sync: false
-      - key: WATSONX_PROJECT_ID
-        sync: false
-      - key: WATSONX_SPACE_ID
-        sync: false
-      - key: WATSONX_GUARDIAN_AGENT_ID
-        value: guardian_v1
-      - key: WATSONX_GUARDIAN_ACTION_MONITOR
-        value: monitor_driver
-      - key: WATSONX_GUARDIAN_ACTION_SPEED
-        value: monitor_speed
