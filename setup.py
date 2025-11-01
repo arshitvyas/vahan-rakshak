@@ -10,7 +10,7 @@ setup(
     description="Project Vāhan-Rakshak: Multi-Agent Vehicle Safety Guardian System",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/vahan-rakshak",
+    url="https://github.com/korrapati-satish/vahan-rakshak",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -22,7 +22,7 @@ setup(
     ],
     python_requires=">=3.8",
     install_requires=[
-        "pydantic>=2.4.2",
+        "pydantic>=2.10.3,<3",
         "python-dotenv>=1.0.0",
         "requests>=2.31.0",
         "fastapi>=0.104.1",
