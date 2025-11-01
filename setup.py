@@ -30,7 +30,7 @@ setup(
         "paho-mqtt>=1.6.1",
         "Flask>=3.0.0",
         "redis>=5.0.1",
-        "pyyaml>=6.0.1",
+        "pyyaml>=6.0.2,<7.0.0",
         "qrcode>=7.4.2",
         "pillow>=10.1.0",
         "numpy>=1.26.2",
