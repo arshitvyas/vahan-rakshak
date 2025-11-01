@@ -368,7 +368,15 @@ async def tool_sos_gps_update(body: SOSLocationUpdateRequest) -> Dict[str, Any]:
 @app.post("/v1/tools/sos/notify-fleet")
 async def tool_sos_notify_fleet(body: SOSFleetNotifyRequest) -> Dict[str, Any]:
     sos = _get_sos(body.vehicle_id)
-    return sos.notify_fleet_manager(body.vehicle_id, body.message)
+    # Backwards-compatible mapping: our SOSDispatcher expects (vehicle_id, incident_type, incident_details, contact_info)
+    # but the API contract currently sends just a message. Use sensible defaults for missing fields.
+    contact = os.getenv("FLEET_CONTACT", "fleet@company.com")
+    return sos.notify_fleet_manager(
+        vehicle_id=body.vehicle_id,
+        incident_type="INFO",
+        incident_details=body.message,
+        contact_info=contact,
+    )
 
 
 @app.get("/v1/tools/sos/history/{vehicle_id}")
