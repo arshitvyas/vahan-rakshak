@@ -17,6 +17,18 @@ def generate_openapi():
     """Generate OpenAPI schema from FastAPI app."""
     openapi_schema = app.openapi()
     
+    # Add servers configuration
+    openapi_schema["servers"] = [
+        {
+            "url": "https://vahan-rakshak.onrender.com",
+            "description": "Production server (Render)"
+        },
+        {
+            "url": "http://localhost:8000",
+            "description": "Local development server"
+        }
+    ]
+    
     # Pretty print with 2-space indentation
     openapi_json = json.dumps(openapi_schema, indent=2)
     

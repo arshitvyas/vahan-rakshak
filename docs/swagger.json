@@ -4,6 +4,16 @@
     "title": "Vahan-Rakshak API",
     "version": "1.0.0"
   },
+  "servers": [
+    {
+      "url": "https://vahan-rakshak.onrender.com",
+      "description": "Production server (Render)"
+    },
+    {
+      "url": "http://localhost:8000",
+      "description": "Local development server"
+    }
+  ],
   "paths": {
     "/healthz": {
       "get": {
